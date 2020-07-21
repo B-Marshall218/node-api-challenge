@@ -28,7 +28,7 @@ router.get("/:id/actions"), (req, res) => {
 
 }
 
-router.post("/", (req, res) => {
+router.post("/", validateProject, (req, res) => {
 
     Projects.insert(req.body)
         .then(project => {
@@ -69,5 +69,13 @@ router.delete("/:id", (req, res) => {
             res.status(500).json({ errorMessage: "something brokeadid", err })
         })
 })
+
+function validateProject(req, res, next) {
+    if (req.body) {
+        next()
+    } else {
+        res.status(400).json({ message: "Missing project name" })
+    }
+}
 
 module.exports = router
