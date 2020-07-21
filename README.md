@@ -50,7 +50,7 @@ Middleware expands Express. Most of the code we write are middleware. They are a
 
 - [ ] Describe a Resource?
 
-Information requested or located within an API. 
+Information requested or located within an API. What you receive when you access an API.  
 
 - [ ] What can the API return to help clients know if a request was successful?
 
